@@ -1,0 +1,26 @@
+--drop tables--
+drop table persona;
+drop table tipo_persona;
+drop table telefono;
+drop table direccion;
+drop table articulo;
+drop table articulo_prestado;
+drop table autor;
+drop table revista;
+drop table libro;
+drop table pelicula;
+drop table parametro;
+
+
+--drop sequence--
+drop sequence s_PERSONA
+drop sequence s_TIPO_PERSONA
+drop sequence s_TELEFONO
+drop sequence s_DIRECCION
+drop sequence s_ARTICULO
+drop sequence s_ARTICULO_PRESTADO
+drop sequence s_AUTOR
+drop sequence s_REVISTA
+drop sequence s_LIBRO
+drop sequence s_PELICULA
+drop sequence s_PARAMETRO
