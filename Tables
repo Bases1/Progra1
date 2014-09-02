@@ -1,0 +1,219 @@
+CREATE TABLE Persona 
+(id_persona NUMBER(8) , 
+id_tipo number(1), --foreign key
+id_direccion number(8),
+nombre VARCHAR2(15) 
+CONSTRAINT persona_personanombre_nn NOT NULL ,
+primer_apellido varchar2(20) not null, 
+segundo_apellido varchar2(20) not null,
+
+
+CONSTRAINT pk_persona
+primary key (id_persona)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Tipo_Persona
+(id_tipo number(1), -- 1-estudiante, 2-colega, 3-familiar
+descripción varchar2(10),
+
+CONSTRAINT pk_tipopersona
+primary key (id_tipo)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+CREATE TABLE Telefono
+(id_telefono NUMBER(8) , 
+id_persona NUMBER(8), --foreign key
+primer_apellido varchar2(20),
+descripcion varchar2(20),
+CONSTRAINT pk_telefono
+primary key (id_telefono)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Direccion
+(id_direccion number(8),
+distrito varchar2(20),
+canton varchar2(20),
+provincia varchar2(20),
+
+CONSTRAINT pk_direccion
+primary key (id_direccion)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Articulo
+(id_articulo number(8),
+descripcion varchar2(500),
+imagen varchar2(500), --dirección de la imagen, muchos caracteres
+calificacion number(2), --dos digitos, para tomar del 0 al 10
+estado number(1), --el boolean es solo un numero, 0 disponible ó 1 prestado
+numero_prestamos number(3), -- del 000 al 999
+
+CONSTRAINT pk_articulo
+primary key (id_articulo)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Articulo_prestado
+(id_articulo_prestado number(8),
+id_persona NUMBER(8) , --foreign key
+id_articulo number(8), --foreign key
+fecha_inicial date,
+
+CONSTRAINT pk_articuloprestado
+primary key (id_articulo_prestado)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Autor
+(id_autor number(8),
+nombre varchar2(20),
+primer_apellido varchar2(20),
+segundo_apellido varchar2(20),
+
+CONSTRAINT pk_autor
+primary key (id_autor)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Revista
+(id_revista number(8),
+id_articulo number(8), --foreign key
+
+CONSTRAINT pk_revista
+primary key (id_revista)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Libro
+(id_libro number(8),
+id_articulo number(8), --foreign key
+edicion varchar2(50),
+editorial varchar2(50),
+
+CONSTRAINT pk_libro
+primary key (id_libro)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Pelicula
+(id_pelicula number(8),
+id_articulo number(8), --foreign key
+
+CONSTRAINT pk_pelicula
+primary key (id_pelicula)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+create table Parametro
+(id_parametro number(8),
+descripción varchar2(500),
+valor number(2),
+
+CONSTRAINT pk_parametro
+primary key (id_parametro)
+using index
+tablespace Biblioteca_data pctfree 20
+storage (initial 10k next 10k pctincrease 0)
+)
+Tablespace Biblioteca_data
+STORAGE (INITIAL 6144
+NEXT 6144
+MINEXTENTS 1
+MAXEXTENTS 5
+);
+
+
+--Foreign Keys--
+alter table "BIBLIOTECA"."PERSONA" add constraint fk_Persona_idTipo foreign key("ID_TIPO") references "TIPO_PERSONA"("ID_TIPO");
+alter table "BIBLIOTECA"."PERSONA" add constraint fk_persona_idDireccion foreign key("ID_DIRECCION") references "DIRECCION"("ID_DIRECCION");
+alter table "BIBLIOTECA"."TELEFONO" add constraint fk_Telefono_idPersona foreign key("ID_PERSONA") references "PERSONA"("ID_PERSONA");
+alter table "BIBLIOTECA"."ARTICULO_PRESTADO" add constraint fk_ArtPrestado_idPersona foreign key("ID_PERSONA") references "PERSONA"("ID_PERSONA");
+alter table "BIBLIOTECA"."ARTICULO_PRESTADO" add constraint fk_ArtPrestado_idArticulo foreign key("ID_ARTICULO") references "ARTICULO"("ID_ARTICULO");
+alter table "BIBLIOTECA"."REVISTA" add constraint fk_revista_idArticulo foreign key("ID_ARTICULO") references "ARTICULO"("ID_ARTICULO");
+alter table "BIBLIOTECA"."LIBRO" add constraint fk_libro_idArticulo foreign key("ID_ARTICULO") references "ARTICULO"("ID_ARTICULO");
+alter table "BIBLIOTECA"."PELICULA" add constraint fk_pelicula_idArticulo foreign key("ID_ARTICULO") references "ARTICULO"("ID_ARTICULO");
+
