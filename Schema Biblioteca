@@ -1,0 +1,49 @@
+--
+-- Creación de tablespace
+--
+
+-- DATA
+CREATE TABLESPACE BIBLIOTECA_Data
+DATAFILE 'C:\app\gab\oradata\GlobalDB\Bibliotecadata.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512k
+MAXSIZE 200M;
+--
+-- INDEX
+CREATE TABLESPACE BIBLIOTECA_Ind
+DATAFILE 'C:\app\gab\oradata\GlobalDB\Bibliotecaind.dbf'
+SIZE 10M
+REUSE
+AUTOEXTEND ON
+NEXT 512k
+MAXSIZE 200M;
+
+-----usario-----
+
+CREATE USER Biblioteca
+IDENTIFIED BY Biblioteca 
+DEFAULT TABLESPACE Biblioteca_data 
+QUOTA 10M ON Biblioteca_data 
+TEMPORARY TABLESPACE temp
+QUOTA 5M ON system; 
+--PROFILE app_user 
+--PASSWORD EXPIRE;
+--------------------------------------------------
+create ROLE Biblioteca
+IDENTIFIED BY Biblioteca; 
+-------------------------------------------------- 
+GRANT CONNECT TO Biblioteca;
+--------------------------------------------------
+--GRANT EXECUTE on schema.procedure TO username;
+--------------------------------------------------
+grant create public synonym to Biblioteca;
+--------------------------------------------------
+grant create session to Biblioteca;
+grant create table to Biblioteca;
+grant create view to Biblioteca;
+grant CREATE ANY INDEX to Biblioteca;
+grant DROP PUBLIC SYNONYM to Biblioteca;
+GRANT UNLIMITED TABLESPACE TO Biblioteca;
+
