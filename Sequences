@@ -1,0 +1,110 @@
+/*-------1---------------------*/
+create sequence s_PERSONA
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_PERSONA.nextval from DUAL;
+
+/*-------2---------------------*/
+create sequence s_TIPO_PERSONA
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_TIPO_PERSONA.nextval from DUAL;
+
+/*-------3---------------------*/
+create sequence s_TELEFONO
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_TELEFONO.nextval from DUAL;
+
+/*-------4---------------------*/
+create sequence s_DIRECCION
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_DIRECCION.nextval from DUAL;
+
+/*-------5---------------------*/
+create sequence s_ARTICULO
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_ARTICULO.nextval from DUAL;
+
+/*-------6---------------------*/
+create sequence s_ARTICULO_PRESTADO
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_ARTICULO_PRESTADO.nextval from DUAL;
+
+/*-------7---------------------*/
+create sequence s_AUTOR
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_AUTOR.nextval from DUAL;
+
+/*-------8---------------------*/
+create sequence s_REVISTA
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_REVISTA.nextval from DUAL;
+
+/*-------9---------------------*/
+create sequence s_LIBRO
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_LIBRO.nextval from DUAL;
+
+/*-------10---------------------*/
+create sequence s_PELICULA
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_PELICULA.nextval from DUAL;
+
+/*-------11---------------------*/
+create sequence s_PARAMETRO
+start with 0
+increment by 1
+minvalue 0
+maxvalue 10000000
+NOCACHE
+NOCYCLE;
+--select s_PARAMETRO.nextval from DUAL;
+
