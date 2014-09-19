@@ -3,38 +3,41 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Biblioteca de Alejandrìa </title>
-	<link href="styleArticulos.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="styleTop.css" rel="stylesheet" type="text/css" media="screen" />
 	<script src="modernizr-1.1.min.js"></script>
 </head>
 <body>
 	<header id="site_head"><!--useful to create the 960px limit-->
 		<div class="header_cont">
 		<h1><a href="index.html">biblioteca de alejandria</a></h1>
-		
-		<div class="social">
-			<div id="search">
-			<div class="button-search"></div>
-				<input type="text" value="buscar..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
-			</div> 
-		</div>
 
 		<nav class="head_nav">
 		<ul>
 			<!--<li class="rss"><a href="#">Libros</a></li>
 			<li class="twitter"><a href="#">Peliculas</a></li>
 			<li class="home"><a href="#">Revistas</a></li>-->
-			<li><a href="TopPeliculas.html">Tops</a></li>
-			<li><a href="#">Prestados</a></li>
-			<li><a href="#">Sin Prestar</a></li>
-			<li><a href="RegistroPeliculas.html">Registrar</a></li>
+			<li><a href="PagPeliculas.html">Volver</a></li>
 		</ul>
-
-
 		</nav>
 		</div>
 	</header>
 	
+	<div>
+		<form class="Top">
+			Top <input type="text" name="numeroTop">
+			<input type="submit" name="Buscar" value="Buscar">
+		</form>
 
-	
+	</div>
+
+	<div>
+		<form class="TopMeses">
+			Cantidad de Peliculas <input type="text" name="numeroTop">
+			Cantidad de meses <input type="text" name="numeroTop">
+			<input type="submit" name="Buscar" value="Buscar">
+		</form>
+
+	</div>
+
 </body>
 </html>
