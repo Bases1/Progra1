@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*  Reset for some default browser CSS - General */
+
+body, div, h1, h2, h3, p, ul, ol, li, img, header, section, aside, footer, button {
+	margin: 0; padding: 0; border: 0; list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #961b25;
+}
+
+a:hover {
+	color: #6f92a7;
+}
+
+:focus {
+	outline: 0;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif; 
+	font-weight: normal;
+} 
+
+h2 {
+	font-size: 22px;
+	line-height: 28px;
+}
+
+.float {
+		float:left;
+	}
+	
+body {
+	background: #f6f6ee url(images/Biblioteca-4.jpg);
+	background-position:center;
+	font-family : "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	}	
+
+
+/* Header */
+	
+header#site_head {
+	background: url(images/descarga.png);
+	-moz-box-shadow: inset 0px -2px 3px #480508;
+	-khtml-box-shadow: inset 0px -2px 3px #480508;				
+	-webkit-box-shadow: inset 0px -2px 3px #480508;
+	box-shadow: inset 0px -2px 3px #480508;
+	border-bottom: 1px solid #fffffb;
+	height: 70px;
+	width: 100%;
+	display: block;
+}
+
+	.header_cont {
+		width: 960px;
+		margin: 0 auto;
+		padding-top: 15px;
+	}
+	
+	.header_cont h1 {
+		text-indent:-9999px;
+		float: left;
+	}
+	
+	.header_cont h1 a {
+		background: url(images/logo.png);
+		width: 148px;
+		height: 58px;
+		display: block;
+	}
+	
+	.header_cont h1 a:hover {
+		background-position: 0px -45px;
+	}
+	
+	nav.head_nav {
+		float: right;
+		margin-top: 13px;
+	}
+	
+	nav.head_nav ul li {
+		display: inline;
+		margin: 0px 5px;
+	}
+	
+	nav.head_nav ul li a {
+		color: #f6f6ee;
+		font-size: 12px;
+		font-weight: normal;
+		/*text-transform: lowercase;*/
+		padding: 5px 8px;
+	}
+	
+	nav.head_nav ul li.home a {
+		background: #4f1d1e;
+		-moz-border-radius: 10px;		
+		-khtml-border-radius: 10px;				
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
+	
+	nav.head_nav ul li a:hover {
+		text-shadow: 1px 1px 1px #2c0306;
+		background: #4f1d1e;
+		-moz-border-radius: 10px;
+		-khtml-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		-moz-box-shadow: inset 0px 0px 2px #2c0306;
+		-khtml-box-shadow: inset 0px 0px 2px #2c0306;
+		-webkit-box-shadow: -1px -1px 2px #2c0306; /*-webkit- inset fix*/
+		box-shadow: inset 0px 0px 2px #2c0306;
+		color: #f6f6ee;
+	}
+	/*
+	nav.head_nav ul li.rss, nav.head_nav ul li.twitter  {
+		position: relative;
+		left: -355px;
+		margin: 0;
+	}
+	
+	nav.head_nav ul li.rss a {
+		color: #b4676c;
+		border-right: 1px solid #903f43;
+		margin: 0;
+		padding-left: 20px;
+		background: url(images/rss.png) left no-repeat;
+		font-size:10px;
+	}
+	*/
+	/*
+	nav.head_nav ul li.twitter a {
+		color: #b4676c;
+		margin-left: 3px;
+		padding-left: 20px;
+		background: url(images/twitter.png) left no-repeat;
+		font-size:10px;
+	}
+	
+	nav.head_nav ul li.rss a:hover, nav.head_nav ul li.twitter a:hover  {
+		color: #f6f6ee; 		
+		-moz-border-radius: 0;
+		-khtml-border-radius: 0;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		-moz-box-shadow: none;
+		-khtml-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	*/
+/* Main container */	
+
+#main_content {	
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 220px;
+}
+
+nav.iconos {
+	float: right;
+	margin-right: 150px;
+}
+
+nav.iconos ul li {
+		display: inline-table;
+		margin: 50px 50px;
+	}
+
+nav.iconos ul li.libros, nav.iconos ul li.revistas,nav.iconos ul li.peliculas, nav.iconos ul li.personas  {
+		position: center;
+		left: 50px;
+		right: 50px;
+		margin: 30px;
+	}  
+
+nav.iconos ul li.libros a{
+	background: url(images/libro.png);
+	width: 120px;
+	height: 124px;
+	display: block;
+}
+
+nav.iconos ul li.revistas a{
+	background: url(images/revistas2.png);
+	width: 120px;
+	height: 28px;
+	display: block;
+}
+
+
+nav.iconos ul li.peliculas a{
+	background: url(images/pelicula.png);
+	width: 120px;
+	height: 124px;
+	display: block;
+}
+	
+
+nav.iconos ul li.personas a{
+	background: url(images/persona.png);
+	width: 124px;
+	height: 116px;
+	display: block;
+}
