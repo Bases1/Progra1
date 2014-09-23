@@ -1,0 +1,246 @@
+---------------------------------------------------------REGISTRAR-----------------------------------------------------------------------
+---Registrar persona
+CREATE OR REPLACE PROCEDURE registrarPersona
+(idTipo in number,idDir in number,nom in VARCHAR2,priApe in varchar2, segApe in varchar2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Persona(id_persona, id_tipo, id_direccion, nombre, primer_apellido, segundo_apellido) VALUES (s_PERSONA.NEXTVAL, idTipo, idDir, nom, priApe,segApe);
+END registrarPersona;
+
+declare
+
+begin 
+registrarPersona(2,3,456789,'Juan','Ávila', 'Barrantes');
+end;
+
+---Registrar Dirección
+CREATE OR REPLACE PROCEDURE registrarDireccion
+(distrito in VARCHAR2,canton in VARCHAR2,provincia in VARCHAR2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Direccion(id_direccion, distrito, canton, provincia) VALUES (s_DIRECCION.NEXTVAL, distrito, canton, provincia);
+END registrarDireccion;
+
+declare
+
+begin 
+registrarDireccion(1,'distrito','canton','provincia');
+end;
+
+---Registrar Tipo de persona
+CREATE OR REPLACE PROCEDURE registrarTipoPersona
+(idTipo in number, des in varchar2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Tipo_Persona(id_tipo,descripción) VALUES (s_TIPO_PERSONA,des);
+END registrarTipoPersona;
+
+declare
+
+begin 
+registrarTipoPersona('Estudiante');
+end;
+
+---Registrar Teléfono
+CREATE OR REPLACE PROCEDURE registrarTelefono
+(idPer in number,primerApe in varchar2,des in varchar2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Telefono(s_TELEFONO.NEXTVAL, id_persona, primer_apellido, descripcion) VALUES (idTel,idPer,primerApe,des);
+END registrarTelefono;
+
+declare
+
+begin 
+registrarTelefono(1,'Montoya','11111111');
+end;
+
+---Registrar articulo
+CREATE OR REPLACE PROCEDURE registrarArticulo
+(des in varchar2,imag in varchar2,califi in number,esta in number,numeroPres in number)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Articulo(id_articulo,descripcion,imagen,calificacion, estado,numero_prestamos) VALUES (s_ARTICULO.NEXTVAL, des, imag, califi,esta,numeroPres);
+END registrarArticulo;
+
+declare
+
+begin 
+registrarArticulo(4,'Ciencia ficción','C:',7,1,3);
+end;
+
+---Registrar artículo prestado
+CREATE OR REPLACE PROCEDURE registrarArticuloPrestado
+(idPersona in number,id_art in number,fechaIni in date)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Articulo_prestado(id_articulo_prestado,id_persona,id_articulo,fecha_inicial) VALUES (s_ARTICULO_PRESTADO.NEXTVAL ,idPersona,id_art,fechaIni);
+END registrarArticuloPrestado;
+
+declare
+
+begin 
+registrarArticuloPrestado(1,1,4,sysdate);
+end;
+
+---Registrar Autor
+CREATE OR REPLACE PROCEDURE registrarAutor
+(nom in varchar2,primerApe in varchar2,segundoApe in varchar2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Autor(id_autor,nombre,primer_apellido,segundo_apellido) VALUES (s_AUTOR.NEXTVAL,nom,primerApe,segundoApe);
+END registrarAutor;
+
+declare
+
+begin 
+registrarAutor('Eduardo','Valerín','Soto');
+end;
+
+---Registrar Revista
+CREATE OR REPLACE PROCEDURE registrarRevista
+(idArt in number)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Revista(id_Revista,id_Articulo) VALUES (s_REVISTA_NEXTVAL,idArt);
+END registrarRevista;
+
+declare
+
+begin 
+registrarRevista(7);
+end;
+
+---Registrar Libro
+CREATE OR REPLACE PROCEDURE registrarLibro
+(idArt in number,edic in varchar2,edit in varchar2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Libro(id_libro,id_articulo,edicion,editorial) VALUES (s_LIBRO.NEXTVAL,idArt,edic,edit);
+END registrarLibro;
+
+declare
+
+begin 
+registrarLibro(4,'Cartago','Tecnológica');
+end;
+
+---Registrar película
+CREATE OR REPLACE PROCEDURE registrarPelicula
+(idArt in number)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Pelicula(id_pelicula,id_articulo) VALUES (s_PELICULA.NEXTVAL,idArt);
+END registrarPelicula;
+
+declare
+
+begin 
+registrarPelicula(10);
+end;
+
+---Registrar parametro
+CREATE OR REPLACE PROCEDURE registrarParametro
+(des in varchar2,val in number)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   INSERT INTO Parametro(id_parametro,descripción,valor) VALUES (s_PARAMETRO.NEXTVAL,des,val);
+END registrarParametro;
+
+declare
+
+begin 
+registrarParametro('entero',2);
+end;
+
+
+---------------------------------------------------------EDITAR-----------------------------------------------------------------------
+--- Editar persona
+CREATE OR REPLACE PROCEDURE editarPersona
+(idPer in number,idTipo in number,idDir in number,nom in VARCHAR2,priApe in varchar2, segApe in varchar2)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   update Persona set  id_tipo = idTipo, id_direccion=idDir, nombre=nom, primer_apellido= priApe,segundo_apellido =segApe
+   where id_persona= idPer ;
+END editarPersona;
+
+declare
+
+begin 
+editarPersona(2,3,456789,'Jorge','Bolaños', 'Gonzales');
+end;
+
+--- Editar artículo
+CREATE OR REPLACE PROCEDURE editarArticulo
+(idArt in number,des in varchar2,imag in varchar2,califi in number,esta in number,numeroPres in number)
+AS
+BEGIN    
+
+    -- Insertar bloque de instrucciones a ejecutar.
+   update Articulo set  id_articulo= idArt,descripcion= des,imagen= imag,calificacion= califi, estado= esta,numero_prestamos= numeroPres
+   where id_articulo= idArt;
+END editarArticulo;
+
+declare
+
+begin 
+editarArticulo(4,'Historia Universal','C:',7,1,3);
+end;
+
+---------------------------------------------------------Consultar---------------------------------------------------------------------
+--Consultar Libro
+Create or replace procedure consultarLibro
+(nombre in varchar2)
+as 
+begin 
+  select ARTICULO.*, LIBRO.* from Articulo, Libro where nombre = libro.titulo, ;--terminar
+end;
+
+
+create or replace procedure consultar
+as
+
+begin
+
+end;
+
+
+create or replace procedure calcular_top
+is 
+cursor c1 is 
+select DESCRIPCION, NUMERO_PRESTAMOS from 
+(select * from (select * from ARTICULO order by ARTICULO.NUMERO_PRESTAMOS desc) 
+where rownum <= 10) ; 
+
+begin
+for i in c1
+  loop
+
+    DBMS_OUTPUT.PUT_LINE(i.DESCRIPCION, i.NUMERO_PRESTAMOS);
+
+  end loop;
+end calcular_top;
