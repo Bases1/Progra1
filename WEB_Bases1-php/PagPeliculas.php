@@ -11,16 +11,12 @@
 		<div class="header_cont">
 		<h1><a href="index.php">biblioteca de alejandria</a></h1>
 		
-		<div class="social">
-			<div id="search">
-			<div class="button-search"></div>
-				<input type="text" value="buscar..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
-			</div> 
-		</div>
+		
 
 		<nav class="head_nav">
 		<ul>
-			<li><a href="TopPeliculas.php">Tops</a></li>
+			<li><a href="TopPeliculasForm.php">Tops</a></li>
+			<li><a href="BusquedaPeliculas.php">Busqueda</a></li>
 			<li><a href="#">Prestados</a></li>
 			<li><a href="#">Sin Prestar</a></li>
 			<li><a href="RegistroPeliculas.php">Registrar</a></li>

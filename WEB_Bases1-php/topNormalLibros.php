@@ -19,6 +19,16 @@
 
 		</nav>
 		</div>
+
+		<?php 
+
+			$Numero = $POST
+
+		 ?>
+
+
+
+
 	</header>
 	
 

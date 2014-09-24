@@ -10,20 +10,11 @@
 	<header id="site_head"><!--useful to create the 960px limit-->
 		<div class="header_cont">
 		<h1><a href="index.php">biblioteca de alejandria</a></h1>
-		
-		<div class="social">
-			<div id="search">
-			<div class="button-search"></div>
-				<input type="text" value="buscar...">
-			</div> 
-		</div>
 
 		<nav class="head_nav">
 		<ul>
-			<!--<li class="rss"><a href="#">Libros</a></li>
-			<li class="twitter"><a href="#">Peliculas</a></li>
-			<li class="home"><a href="#">Revistas</a></li>-->
-			<li><a href="TopRevistas.php">Tops</a></li>
+			<li><a href="TopRevistasForm.php">Tops</a></li>
+			<li><a href="BusquedaPeliculas.php">Busqueda</a></li>
 			<li><a href="#">Prestados</a></li>
 			<li><a href="#">Sin Prestar</a></li>
 			<li><a href="RegistroRevistas.php">Registrar</a></li>
