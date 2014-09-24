@@ -120,20 +120,21 @@ header#site_head {
 
 .Top{
 	color:red;
-	
+	font-family: "Times New Roman", serif; font-style: italic;
+	font-size: 20px;
 	margin: 5cm 15cm;
 	
 }
 
 .TopMeses{
 	color:red;
-	
+	font-family: "Times New Roman", serif; font-style: italic;
+	font-size: 20px;
 	margin: 5cm 15cm;
 	
 }
 
 input{
-
 	display: block;
 	float: center;
 	
