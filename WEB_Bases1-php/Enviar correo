@@ -1,0 +1,9 @@
+<?php
+$para = "gabriel14_cr@hotmail.com";
+$titulo = "recordatorio de devolución de libro";
+$mensaje = "Se le recuerda que debe devolver el libro a su dueño";
+
+if (mail($para, $titulo, $mensaje))
+	{echo "el correo se ha enviado correctamente";}
+else{echo "fallo al enviar el correo";}
+?>
